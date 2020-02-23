@@ -1,11 +1,9 @@
-SET(utils_SRCS
-    Regression.cpp
-    SimplePeakFinder.cpp
-    SimpleMinMaxPeakFinder.cpp
-    PoseEstimation.cpp
-)
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
-SET(utils_HDRS
+set(utils_SRCS Regression.cpp SimplePeakFinder.cpp SimpleMinMaxPeakFinder.cpp
+               PoseEstimation.cpp)
+
+set(utils_HDRS
     Regression.h
     Convolution.h
     Convolution.hpp
@@ -13,14 +11,14 @@ SET(utils_HDRS
     HistogramDistances.hpp
     SimplePeakFinder.h
     SimpleMinMaxPeakFinder.h
-    PoseEstimation.h
-)
+    PoseEstimation.h)
 
-ADD_LIBRARY(utils SHARED ${utils_SRCS})
+add_library(utils STATIC ${utils_SRCS})
 
-install(TARGETS utils 
-    RUNTIME DESTINATION bin
-    LIBRARY DESTINATION lib/flirtlib
-    ARCHIVE DESTINATION lib/flirtlib)
+install(
+  TARGETS utils
+  RUNTIME DESTINATION bin
+  LIBRARY DESTINATION lib/flirtlib
+  ARCHIVE DESTINATION lib/flirtlib)
 
 install(FILES ${utils_HDRS} DESTINATION include/flirtlib/utils)

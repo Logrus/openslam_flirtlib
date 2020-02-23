@@ -22,7 +22,7 @@
 #include "MultiScaleDetectorPlotWidget.h"
 
 #include "MultiScaleDetectorPlotWidget.moc"
-
+#include <qwt_point_data.h>
 #include <iostream>
 
 MultiScaleDetectorPlotWidget::MultiScaleDetectorPlotWidget(QWidget* parent, unsigned int _scales): 
