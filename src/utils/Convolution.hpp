@@ -65,7 +65,7 @@ std::vector<Numeric> convolve1D(const std::vector<Numeric>& _source, const std::
 		case ZERO:
 		    pad = 0; break;
 		case SPECULAR:
-		    pad = source[2*source.size() - 1 - j + _offset]; break;
+		    pad = source[2*(source.size() - 1) - j + _offset]; break;
 		case CIRCULAR:
 		    pad = source[j - _offset -source.size()]; break;
 	    }
